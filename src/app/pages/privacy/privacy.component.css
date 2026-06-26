@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+.page-card a {
+  color: var(--color-neon-cyan);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.page-card strong {
+  color: var(--color-text);
+}

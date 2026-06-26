@@ -1,0 +1,39 @@
+<section class="page-section blog-detail-section" *ngIf="post; else notFound">
+  <div class="container">
+    <a routerLink="/blog" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Blog
+    </a>
+
+    <article class="page-card blog-detail-card">
+      <span class="blog-category">{{ post.category }}</span>
+      <h1>{{ post.title }}</h1>
+      <div class="blog-detail-meta">
+        <span>{{ post.date }}</span>
+        <span>{{ post.readTime }}</span>
+      </div>
+
+      <div class="blog-detail-body">
+        <div class="blog-section" *ngFor="let section of post.sections">
+          <h2 *ngIf="section.heading">{{ section.heading }}</h2>
+          <p *ngFor="let paragraph of section.paragraphs">{{ paragraph }}</p>
+          <ul *ngIf="section.list">
+            <li *ngFor="let item of section.list">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<ng-template #notFound>
+  <section class="page-section blog-detail-section">
+    <div class="container">
+      <article class="page-card blog-detail-card">
+        <h1>Article Not Found</h1>
+        <p class="page-lead">Sorry, we could not find the blog post you are looking for.</p>
+        <a routerLink="/blog" class="back-link back-link--inline">Back to Blog</a>
+      </article>
+    </div>
+  </section>
+</ng-template>

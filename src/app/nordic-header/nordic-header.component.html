@@ -1,0 +1,34 @@
+<header class="nordic-floating-nav" [class.menu-open]="isMenuOpen">
+  <div class="nav-container">
+    <a routerLink="/" class="brand-logo">
+      <img src="logo.svg" alt="Oakwood Jackpot Logo">
+    </a>
+    
+    <nav class="desktop-nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Home</a>
+      <a routerLink="/blog" routerLinkActive="active" class="nav-link">Blog</a>
+      <a routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
+      <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
+    </nav>
+
+    <button
+      class="mobile-menu-toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-label="Toggle menu">
+      <svg class="menu-icon" [class.open]="isMenuOpen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line class="line-top" x1="4" y1="7" x2="20" y2="7"/>
+        <line class="line-mid" x1="4" y1="12" x2="20" y2="12"/>
+        <line class="line-bot" x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" [class.active]="isMenuOpen">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="mobile-link" (click)="toggleMenu()">Home</a>
+    <a routerLink="/blog" routerLinkActive="active" class="mobile-link" (click)="toggleMenu()">Blog</a>
+    <a routerLink="/about" routerLinkActive="active" class="mobile-link" (click)="toggleMenu()">About</a>
+    <a routerLink="/contact" routerLinkActive="active" class="mobile-link" (click)="toggleMenu()">Contact</a>
+  </nav>
+</header>

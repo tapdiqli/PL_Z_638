@@ -1,0 +1,52 @@
+<section class="brands" id="top-games">
+  <div class="container">
+    <div class="brand-list">
+      <a
+        class="brand-card"
+        [class.is-featured]="casino.rank === 1"
+        [href]="getLink(casino.url)"
+        target="_blank"
+        rel="noopener noreferrer"
+        *ngFor="let casino of casinos">
+        <span class="brand-badge">{{ casino.badge }}</span>
+
+        <div class="brand-row">
+          <div class="brand-rank">{{ casino.rank }}</div>
+
+          <div class="brand-logo" [style.--accent]="casino.accent">
+            <div class="brand-logo-mark">
+              <img
+                [src]="casino.logoImage"
+                [alt]="casino.name + ' logo'"
+                class="brand-logo-img">
+            </div>
+          </div>
+
+          <div class="brand-bonus">{{ casino.bonus }}</div>
+
+          <div class="brand-rating">
+            <div class="rating-score rating-score--desktop">{{ casino.rating }}</div>
+            <div class="rating-score rating-score--mobile">{{ casino.ratingMobile }}</div>
+            <div class="rating-detail">
+              <div class="stars">
+                <ng-container *ngFor="let star of casino.stars">
+                  <svg *ngIf="star === 1" class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg *ngIf="star === 0.5" class="star" viewBox="0 0 24 24"><defs><linearGradient [attr.id]="'half-' + casino.rank"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="rgba(255,255,255,0.15)"/></linearGradient></defs><path [attr.fill]="'url(#half-' + casino.rank + ')'" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg *ngIf="star === 0" class="star star-empty" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </ng-container>
+              </div>
+              <span class="votes">{{ casino.votes }} Votes</span>
+            </div>
+          </div>
+
+          <div class="brand-action">
+            <span class="btn-bonus">Get Bonus</span>
+            <span class="min-deposit">Min. Deposit {{ casino.minDeposit }}</span>
+          </div>
+        </div>
+
+        <p class="brand-terms">{{ casino.terms }}</p>
+      </a>
+    </div>
+  </div>
+</section>

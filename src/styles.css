@@ -1,0 +1,184 @@
+/* Global Variables & Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap');
+
+:root {
+  /* --- Dark Neon Casino Palette --- */
+  --color-bg: #0a0a12;
+  --color-bg-deep: #06060c;
+  --color-surface: #15151f;
+  --color-surface-alt: #1c1c29;
+  --color-surface-hover: #22222f;
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+
+  --color-neon-pink: #ff2d78;
+  --color-neon-pink-soft: #ff5c9c;
+  --color-neon-blue: #3d7bff;
+  --color-neon-cyan: #2fe6ff;
+  --color-neon-purple: #9d4edd;
+  --color-gold: #ffc107;
+
+  --color-text: #f3f3f7;
+  --color-text-muted: #9a9aae;
+  --color-text-dim: #6f6f82;
+  --color-white: #ffffff;
+
+  /* Gradients */
+  --gradient-pink: linear-gradient(135deg, #ff2d78 0%, #ff4d6d 100%);
+  --gradient-cta: linear-gradient(135deg, #5b8def 0%, #9b51e0 100%);
+  --gradient-hero: radial-gradient(circle at 80% 0%, rgba(157, 78, 221, 0.28) 0%, rgba(10, 10, 18, 0) 55%),
+                   radial-gradient(circle at 0% 100%, rgba(47, 230, 255, 0.12) 0%, rgba(10, 10, 18, 0) 50%),
+                   linear-gradient(180deg, #0d0d18 0%, #0a0a12 100%);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+
+  /* Shadows / Glows */
+  --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.45);
+  --shadow-hover: 0 14px 40px rgba(0, 0, 0, 0.6);
+  --glow-pink: 0 0 22px rgba(255, 45, 120, 0.55);
+  --glow-cta: 0 6px 24px rgba(123, 92, 246, 0.45);
+
+  /* Fonts */
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Sora', sans-serif;
+
+  /* Layout */
+  --max-w-6xl: 72rem;
+
+  /* --- Legacy aliases (kept so existing components stay consistent) --- */
+  --color-off-white: var(--color-surface);
+  --color-bg-light: var(--color-bg);
+  --color-forest-green: var(--color-neon-pink);
+  --color-forest-green-light: var(--color-neon-pink-soft);
+  --color-wood-brown: var(--color-neon-cyan);
+  --color-text-dark: var(--color-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  color: var(--color-text);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-w-6xl);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* --- Standalone page layout --- */
+.page-section {
+  padding: 140px 0 80px;
+  background: var(--color-bg-deep);
+  min-height: 60vh;
+}
+
+.page-card {
+  width: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 48px 44px;
+  box-shadow: var(--shadow-soft);
+}
+
+.page-card h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.page-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 32px 0 12px;
+  color: var(--color-neon-pink-soft);
+}
+
+.page-card h2:first-of-type {
+  margin-top: 24px;
+}
+
+.page-card p,
+.page-card li {
+  color: var(--color-text-muted);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.page-card p {
+  margin: 0 0 16px;
+}
+
+.page-card ul {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+
+.page-card li {
+  margin-bottom: 8px;
+}
+
+.page-card li::marker {
+  color: var(--color-neon-pink);
+}
+
+.page-lead {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+}
+
+.page-meta {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .page-section {
+    padding: 120px 0 60px;
+  }
+
+  .page-card {
+    padding: 32px 22px;
+  }
+
+  .page-card h1 {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,349 @@
+.brands {
+  padding: 60px 0 70px;
+  background: var(--color-bg);
+}
+
+.brands-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.brands-subtitle {
+  text-align: center;
+  color: var(--color-text-muted);
+  max-width: 540px;
+  margin: 0 auto 40px;
+}
+
+.brand-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* --- Card --- */
+.brand-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px 18px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.brand-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-border-strong);
+}
+
+.brand-card.is-featured {
+  border-color: rgba(255, 45, 120, 0.6);
+  box-shadow: 0 0 0 1px rgba(255, 45, 120, 0.4), 0 0 35px rgba(255, 45, 120, 0.28);
+}
+
+.brand-badge {
+  position: absolute;
+  top: -14px;
+  left: 24px;
+  padding: 7px 18px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--color-white);
+  background: var(--gradient-pink);
+  border-radius: 999px;
+  box-shadow: var(--glow-pink);
+}
+
+/* --- Row layout --- */
+.brand-row {
+  display: grid;
+  grid-template-columns: 36px 11rem minmax(0, 1.6fr) auto minmax(140px, 1fr);
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-rank {
+  grid-column: 1;
+  font-family: var(--font-secondary);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-text-dim);
+  text-align: center;
+}
+
+.brand-logo {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-bonus {
+  grid-column: 3;
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.brand-rating {
+  grid-column: 4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.brand-action {
+  grid-column: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  text-align: center;
+}
+
+.brand-logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 11rem;
+  height: 8rem;
+  overflow: hidden;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.brand-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent, var(--color-text));
+}
+
+/* Bonus */
+
+.rating-score {
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.rating-score--mobile {
+  display: none;
+}
+
+.rating-score--desktop {
+  display: block;
+}
+
+.rating-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stars {
+  display: flex;
+  gap: 1px;
+  color: var(--color-gold);
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+}
+
+.star-empty {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.votes {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* Action */
+
+.btn-bonus {
+  position: relative;
+  display: block;
+  padding: 14px 20px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--gradient-cta);
+  border-radius: 999px;
+  box-shadow: var(--glow-cta);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-bonus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  animation: shine 3.5s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { left: -60%; }
+  55%, 100% { left: 130%; }
+}
+
+.btn-bonus:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(123, 92, 246, 0.6);
+}
+
+.min-deposit {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.min-deposit:hover {
+  color: var(--color-text);
+}
+
+/* Terms */
+.brand-terms {
+  margin: 18px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--color-text-dim);
+  text-align: center;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .brands {
+    padding: 36px 0;
+  }
+
+  .brand-list {
+    gap: 22px;
+  }
+
+  .brand-card {
+    padding: 26px 18px 14px;
+  }
+
+  .brand-terms {
+    display: none;
+  }
+
+  .brand-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 14px 16px;
+    align-items: center;
+  }
+
+  .brand-rank {
+    display: none;
+  }
+
+  .brand-logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-content: flex-start;
+  }
+
+  .brand-rating {
+    grid-column: 2;
+    grid-row: 1;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .brand-bonus {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .brand-action {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    width: 100%;
+  }
+
+  .brand-logo-mark {
+    width: auto;
+    height: 28px;
+    padding: 0;
+  }
+
+  .brand-logo-img {
+    height: 28px;
+    width: auto;
+    max-width: 11rem;
+  }
+
+  .rating-score--desktop {
+    display: none;
+  }
+
+  .rating-score--mobile {
+    display: block;
+  }
+
+  .rating-score {
+    font-size: 1.75rem;
+  }
+
+  .rating-detail {
+    align-items: flex-end;
+  }
+
+  .stars {
+    justify-content: flex-end;
+  }
+
+  .btn-bonus {
+    width: 100%;
+  }
+}

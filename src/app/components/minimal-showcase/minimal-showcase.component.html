@@ -1,0 +1,36 @@
+<article class="minimal-showcase">
+  <div class="showcase-header">
+    <div class="brand-info">
+      <img [src]="brand.logoUrl" [alt]="brand.name + ' Logo'" class="brand-logo" />
+      <h2 class="brand-name">{{ brand.name }}</h2>
+    </div>
+    <div class="rating-container">
+      <div class="rating-score">{{ brand.rating }} / 100</div>
+      <div class="rating-stars" [innerHTML]="getStarsHtml()"></div>
+    </div>
+  </div>
+  
+  <div class="showcase-body">
+    <div class="bonus-section">
+      <h3 class="bonus-title">Welcome Offer</h3>
+      <p class="bonus-text">{{ brand.bonusText }}</p>
+    </div>
+    
+    <div class="features-section">
+      <ul class="pros-list">
+        @for (pro of brand.pros; track pro) {
+          <li><span class="check-icon">✓</span> {{ pro }}</li>
+        }
+      </ul>
+      <div class="small-features">
+        @for (feature of brand.features; track feature) {
+          <span class="feature-tag">{{ feature }}</span>
+        }
+      </div>
+    </div>
+  </div>
+  
+  <div class="showcase-footer">
+    <a [href]="brand.ctaLink" class="showcase-cta">Claim Offer</a>
+  </div>
+</article>

@@ -1,0 +1,21 @@
+<section class="page-section blog-section">
+  <div class="container">
+    <header class="blog-header">
+      <h1>Blog</h1>
+      <p class="page-lead">Guides, tips, and updates to help you get more from UK online casinos.</p>
+    </header>
+
+    <div class="blog-grid">
+      <article class="blog-card" *ngFor="let post of posts">
+        <span class="blog-category">{{ post.category }}</span>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.excerpt }}</p>
+        <div class="blog-meta">
+          <span>{{ post.date }}</span>
+          <span>{{ post.readTime }}</span>
+        </div>
+        <a [routerLink]="['/blog', post.slug]" class="blog-link">Read more</a>
+      </article>
+    </div>
+  </div>
+</section>

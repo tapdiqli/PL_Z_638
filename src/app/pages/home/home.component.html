@@ -1,0 +1,53 @@
+<app-minimal-showcase></app-minimal-showcase>
+
+<app-fjord-brand-panel></app-fjord-brand-panel>
+
+<section class="article-section" id="about">
+  <div class="container">
+    <article class="article">
+      <h2>Finding the Best Online Casinos in the UK</h2>
+      <p>If you love casino games but rarely have the time to head out to a physical venue, playing online is an easy and convenient alternative. These sites have been around for years, yet the way they look and feel has changed enormously recently. Even if you tried one in the past and it didn't click, today's casinos are well worth a second look — the games are genuinely fun, the odds are fair, and a bit of luck can still land you a tidy win.</p>
+      <p>The smartest move is simply to slow down and compare a handful of options before committing. No two sites suit every player in the same way, so this page exists to help you work out what fits your own style. Everyone weighs things a little differently, and that's exactly the point.</p>
+
+      <h3>Reading Online Casino Reviews</h3>
+      <p>One of the quickest ways to figure out which casino suits you is to read a few reviews. Comments from real players can be useful, but keep in mind that many of them are written straight after a bad experience, so they don't always tell the full story.</p>
+      <p>Reviews from dedicated comparison sites tend to be more balanced. They walk through the things that actually matter — the game library, the payment options, the licence, the site layout and the overall feel — giving you a cleaner overview before you decide to join.</p>
+
+      <h3>Looking for Fast Withdrawal Casinos</h3>
+      <p>Before joining anywhere, it's worth checking which payment methods are supported. Everyone has a preference, so it's reassuring when a casino already works with the option you use day to day. Typically you'll come across:</p>
+      <ul class="article-list">
+        <li>Visa or MasterCard debit and credit cards</li>
+        <li>E-wallets such as PayPal, Skrill, Apple Pay and MuchBetter</li>
+        <li>In-person payments at physical locations linked to the casino</li>
+      </ul>
+      <p>Deposits almost always land instantly, but withdrawal times differ from one site to the next. If getting your winnings quickly matters to you, choosing a casino known for fast payouts is always a sensible move.</p>
+
+      <h3>Choosing a Casino With the Games You Actually Want</h3>
+      <p>The selection of games is another box worth ticking. Between slots, table games and live dealer rooms there can be thousands of titles to explore. A large library is nice, but what really counts is whether your favourites are there. If you already have games you love, double-check they're available before you sign up.</p>
+
+      <h3>Checking if an Online Casino Is Safe</h3>
+      <p>There's always an element of risk when you gamble, but that risk should come from the game itself — not from worrying about the site. Dodgy operators still exist online, so the safest approach is to stick with UK casinos that are properly licensed. Any casino operating legally in the UK is regulated by the UK Gambling Commission, and if you can't spot that licence, it's better to walk away.</p>
+
+      <h3>Sign Up, Deposit and Start Playing</h3>
+      <p>Once you know what you're after, you can pick a casino and get going whenever suits you. There are plenty of great UK sites, and each brings something slightly different to the table — some players even keep a couple on the go to see which one feels best.</p>
+      <p>Whatever you settle on, remember to play responsibly and enjoy yourself. And of course, good luck.</p>
+    </article>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index" [class.open]="openFaq === i">
+        <button class="faq-question" (click)="toggleFaq(i)" [attr.aria-expanded]="openFaq === i">
+          <span>{{ faq.question }}</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

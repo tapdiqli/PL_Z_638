@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { BLOG_POSTS } from './blog-posts';
+
+@Component({
+  selector: 'app-blog',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
+  templateUrl: './blog.component.html',
+  styleUrl: './blog.component.css'
+})
+export class BlogComponent {
+  posts = BLOG_POSTS;
+}

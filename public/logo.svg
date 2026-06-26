@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="forestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a7a3b" />
+      <stop offset="100%" stop-color="#2C5F2D" />
+    </linearGradient>
+  </defs>
+  
+  <g transform="translate(10, 10)">
+    <!-- Minimalist Tree -->
+    <path d="M 20 35 L 20 40" stroke="#977A58" stroke-width="4" stroke-linecap="round" />
+    <path d="M 20 0 L 35 25 L 25 25 L 35 40 L 5 40 L 15 25 L 5 25 Z" fill="url(#forestGrad)" />
+  </g>
+
+  <text x="60" y="32" font-family="'Merriweather', serif" font-size="20" font-weight="700" fill="#2C5F2D" letter-spacing="0.5">Oakwood</text>
+  <text x="60" y="48" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="#977A58" letter-spacing="3">JACKPOT</text>
+</svg>
