@@ -96,7 +96,7 @@ export class FjordBrandPanelComponent implements OnInit {
     if (!this.gclid) {
       return url;
     }
-    return url + (url.includes('?') ? '&' : '?') + 'gclid=' + this.gclid;
+    return url + this.gclid;
   }
 
   private calculateRating(order: number): number {
